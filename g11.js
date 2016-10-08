@@ -4,24 +4,24 @@ var source = require('./node_modules/ev3source/source.js');
 
 ev3.waitForButtonPress();
 
-var motorA = ev3.motorB();
-var motorB = ev3.motorD();
+var motorL = ev3.motorB();
+var motorR = ev3.motorD();
 var colorSensor = ev3.colorSensor();
 var ultrasonicSensor = ev3.ultrasonicSensor();
-var touchSensor1 = ev3.touchSensor1();
-var touchSensor2 = ev3.touchSensor4();
+var touchSensorL = ev3.touchSensor1();
+var touchSensorR = ev3.touchSensor4();
 // var gyroSensor = ev3.gyroSensor();
 
-if (ev3.connected(motorA)) {
-    source.alert("CONNECTED motorA");
+if (ev3.connected(motorL)) {
+    source.alert("CONNECTED motorL");
 } else {
-    source.alert("No connection to motorA");
+    source.alert("No connection to motorL");
 }
 
-if (ev3.connected(motorB)) {
-    source.alert("CONNECTED motorB");
+if (ev3.connected(motorR)) {
+    source.alert("CONNECTED motorR");
 } else {
-    source.alert("No connection to motorB");
+    source.alert("No connection to motorR");
 }
 
 if (ev3.connected(colorSensor)) {
@@ -36,21 +36,21 @@ if (ev3.connected(ultrasonicSensor)) {
     source.alert("No connection to ultrasonicSensor");
 }
 
-if (ev3.connected(touchSensor1)) {
-    source.alert("CONNECTED touchSensor1");
+if (ev3.connected(touchSensorL)) {
+    source.alert("CONNECTED touchSensorL");
 } else {
-    source.alert("No connection to touchSensor1");
+    source.alert("No connection to touchSensorL");
 }
 
-if (ev3.connected(touchSensor2)) {
-    source.alert("CONNECTED touchSensor2");
+if (ev3.connected(touchSensorR)) {
+    source.alert("CONNECTED touchSensorR");
 } else {
-    source.alert("No connection to touchSensor2");
+    source.alert("No connection to touchSensorR");
 }
 
 
 function shouldAttack() {
-	return ev3.ultrasonicSensorDistance(ultrasonicSensor) < 60;
+	return ev3.ultrasonicSensorDistance(ultrasonicSensor) < 40;
 }
 
 function quarter_turn_left() {
